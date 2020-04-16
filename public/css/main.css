@@ -1,6 +1,377 @@
-@import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css);
-@import url(https://fonts.googleapis.com/css?family=Montserrat:400,700);
+@charset "UTF-8";
 
-* {
+/*!
+ * Website IMBD
+ * @author Vinicius Menezes
+ */
+
+/*!
+ * The summary style
+ * 1) - IMPORT
+ * 2) - GLOBAL
+ * 3) - RESET
+ * 4) - UTILS
+ * 5) - STYLE
+ */
+
+/* ========== IMPORT ========== */
+@import url("https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css");
+@import url("https://fonts.googleapis.com/css?family=Montserrat:400,700");
+/* ========== IMPORT ========== */
+
+/* ========== GLOBAL ========== */
+*,
+*::before,
+*::after {
 	box-sizing: border-box;
+}
+
+:root {
+	--color-primary: #e4bb23;
+	--color-primary-hoved: #bc9a1d;
+	--color-bg: #f2f2f2;
+	--color-danger: #e74c3c;
+	--color-gray: #ccc;
+	--color-gray-footer: #bababa;
+	--color-dark: #000;
+	--color-twitter: #55acee;
+	--color-facebook: #3b5998;
+	--color-instagram: #e95950;
+}
+
+body {
+	font-family: Montserrat, sans-serif;
+	font-size: 10px;
+}
+/* ========== GLOBAL ========== */
+
+/* ========== RESET ========== */
+a {
+	text-decoration: none;
+	color: inherit;
+}
+
+ul {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+/* ========== RESET ========== */
+
+/* ========== STYLE ========== */
+.header {
+	background-attachment: fixed;
+	background-image: url(../img/capa-madmax2.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
+	display: flex;
+	flex-direction: column;
+	height: 90vh;
+	justify-content: space-between;
+	padding: 20px;
+	position: relative;
+	width: 100%;
+}
+
+.header:after {
+	background: linear-gradient(
+		0deg,
+		rgba(0, 0, 0, 0.6) 0%,
+		rgba(0, 212, 255, 0) 75%
+	);
+	content: "";
+	height: 100%;
+	left: 0;
+	position: absolute;
+	top: 0;
+	width: 100%;
+}
+
+.header-nav {
+	display: flex;
+	z-index: 2;
+}
+
+.header-nav .container {
+	align-items: center;
+	display: flex;
+	justify-content: space-between;
+}
+
+.container {
+	margin: 0 auto;
+	width: 960px;
+}
+
+.header-logo {
+	display: inline-block;
+}
+
+.header-menu {
+	display: flex;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.header-menu-item {
+	margin: 0 25px;
+}
+
+.header-menu-item a {
+	color: white;
+	font-size: 1.3em;
+	font-weight: bold;
+	text-decoration: none;
+	text-transform: uppercase;
+}
+
+.header-menu-item a:hover {
+	color: var(--color-primary);
+}
+
+.header-user {
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+}
+
+.header-user-avatar {
+	border-radius: 100%;
+	box-shadow: 0 2px 3px rgba(0, 0, 0, 0.5);
+	height: 45px;
+	margin-right: 15px;
+	overflow: hidden;
+	width: 45px;
+}
+
+.header-user-avatar img {
+	width: 100%;
+	height: auto;
+}
+
+.header-user-name {
+	color: white;
+	font-size: 1.3em;
+	font-weight: bold;
+}
+
+.header-content {
+	width: 100%;
+}
+
+.header-content .container {
+	position: relative;
+	z-index: 2;
+}
+
+.header-title {
+	color: white;
+	font-size: 6.5em;
+	font-weight: bold;
+	line-height: 1.2em;
+	margin: 0;
+	text-transform: uppercase;
+}
+
+.header-gender {
+	display: flex;
+	margin: 15px 0 30px;
+	font-size: 13px;
+}
+
+.header-gender-item {
+	color: white;
+	text-decoration: none;
+	margin-right: 15px;
+	text-transform: uppercase;
+}
+
+.header-gender-item:hover {
+	color: var(--color-primary);
+}
+
+.header-trailer-button {
+	display: inline-block;
+	padding: 15px 50px;
+	color: black;
+	font-size: 1.5em;
+	text-decoration: none;
+	background-color: var(--color-primary);
+	border-radius: 40px;
+	position: relative;
+}
+
+.header-trailer-button:hover {
+	background-color: var(--color-primary-hoved);
+}
+
+.header-trailer-button i {
+	font-size: 1.5em;
+	position: absolute;
+	right: 15px;
+	top: 13px;
+}
+
+.header-content-info {
+	padding: 20px 0;
+	font-size: 1.4em;
+	color: white;
+}
+
+.header-content-info p:last-child {
+	color: var(--color-primary-hoved);
+}
+
+.catalog {
+	background-color: var(--color-bg);
+	width: 100%;
+}
+
+.catalog-nav {
+	width: 100%;
+}
+
+.catalog-menu {
+	align-items: center;
+	border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+	display: flex;
+	justify-content: center;
+	list-style: none;
+	margin: 0 auto;
+	padding: 0 20px;
+}
+
+.catalog-menu-item {
+	margin: 0 20px;
+}
+
+.catalog-menu-item a {
+	color: var(--color-primary);
+	display: inline-block;
+	padding: 25px 0;
+	font-size: 1.3em;
+	font-weight: bold;
+	text-decoration: none;
+	text-transform: uppercase;
+}
+
+.catalog-movies {
+	align-items: flex-start;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	padding: 20px 0;
+	width: 100%;
+}
+
+.catalog-movies-item {
+	background-color: white;
+	border-radius: 8px;
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+	display: flex;
+	flex-direction: column;
+	margin-bottom: 30px;
+	overflow: hidden;
+	width: 24%;
+}
+
+.movie-poster {
+	margin: 0;
+	width: 100%;
+	height: auto;
+	overflow: hidden;
+	position: relative;
+}
+
+.movie-poster img {
+	width: 100%;
+	height: auto;
+}
+
+.movie-poster-info {
+	align-items: center;
+	background-color: rgba(0, 0, 0, 0.5);
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+	justify-content: center;
+	left: 0;
+	opacity: 0;
+	padding: 80px 20px;
+	position: absolute;
+	text-align: center;
+	top: 0;
+	transition: all 0.2s ease-in-out;
+	visibility: hidden;
+	width: 100%;
+	z-index: 1;
+}
+
+.catalog-movies-item:hover .movie-poster-info {
+	opacity: 1;
+	visibility: visible;
+}
+
+.movie-poster-info h3 {
+	color: var(--color-primary);
+	font-size: 2em;
+	line-height: 1em;
+	text-transform: uppercase;
+}
+
+.movie-poster-link{
+	color: #fff;
+    font-size: 5em;
+    transition: all 0.2s ease-in-out;
+}
+
+.movie-poster-link:hover{
+	color: var(--color-primary);
+}
+
+.movie-sinopse {
+	padding: 10px;
+	width: 100%;
+}
+
+.movie-sinopse-title {
+	font-size: 1.3em;
+	font-weight: bold;
+	margin: 0;
+	text-transform: uppercase;
+}
+
+.sinopse-gender {
+	margin: 10px 0;
+	display: flex;
+}
+
+.sinopse-gender-item {
+	text-decoration: none;
+	font-size: 1.2em;
+	color: #e4bb23;
+}
+
+.sinopse-gender-item:hover {
+	text-decoration: underline;
+}
+
+.movie-nota {
+	margin: 0;
+	align-items: center;
+	display: flex;
+	font-size: 2em;
+	font-weight: bold;
+	justify-content: space-between;
+}
+
+.movie-nota i {
+	color: #ccc;
+	cursor: pointer;
+}
+
+.movie-nota i:hover {
+	color: #e74c3c;
 }
