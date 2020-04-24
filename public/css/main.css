@@ -10,8 +10,7 @@
  * 1) - IMPORT
  * 2) - GLOBAL
  * 3) - RESET
- * 4) - UTILS
- * 5) - STYLE
+ * 4) - STYLE
  */
 
 /* ========== IMPORT ========== */
@@ -33,7 +32,6 @@
 	--color-danger: #e74c3c;
 	--color-gray: #ccc;
 	--color-gray-footer: #bababa;
-	--color-dark: #000;
 	--color-twitter: #55acee;
 	--color-facebook: #3b5998;
 	--color-instagram: #e95950;
@@ -321,13 +319,13 @@ ul {
 	text-transform: uppercase;
 }
 
-.movie-poster-link{
+.movie-poster-link {
 	color: #fff;
-    font-size: 5em;
-    transition: all 0.2s ease-in-out;
+	font-size: 5em;
+	transition: all 0.2s ease-in-out;
 }
 
-.movie-poster-link:hover{
+.movie-poster-link:hover {
 	color: var(--color-primary);
 }
 
@@ -368,10 +366,54 @@ ul {
 }
 
 .movie-nota i {
-	color: #ccc;
+	color: var(--color-gray);
 	cursor: pointer;
 }
 
 .movie-nota i:hover {
-	color: #e74c3c;
+	color: var(--color-danger);
 }
+
+.footer {
+	background-color: white;
+	color: var(--color-gray-footer);
+	padding: 20px 0;
+	text-align: center;
+	width: 100%;
+}
+
+.footer .container {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.footer-list {
+	padding: 0;
+	list-style: none;
+	display: flex;
+}
+
+.footer-list-item {
+	margin: 0 20px;
+}
+
+.footer-list-item a {
+	font-size: 2.5em;
+	color: var(--color-gray-footer);
+	text-decoration: none;
+	transition: all 0.2s ease-in-out;
+}
+
+.icon-twitter a {
+	color: var(--color-twitter);
+}
+
+.icon-facebook a {
+	color: var(--color-facebook);
+}
+
+.icon-instagram a {
+	color: var(--color-instagram);
+}
+/* ========== STYLE ========== */
